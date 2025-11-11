@@ -1,0 +1,204 @@
+/* style.css */
+
+/* Importamos una fuente bonita y redondeada */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap');
+
+body {
+    font-family: 'Nunito', sans-serif;
+    /* Un fondo oscuro y romántico, como un cielo nocturno */
+    background: linear-gradient(135deg, #1d0f2a, #4a1f4f);
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    text-align: center;
+    overflow: hidden;
+    /* Oculta el desbordamiento para que las animaciones se vean bien */
+}
+
+.container {
+    background: rgba(0, 0, 0, 0.3);
+    padding: 30px 40px;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+
+    /* Animación de aparición */
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+h1,
+h2 {
+    color: #f8c0ff;
+    /* Un color rosa neón suave */
+    text-shadow: 0 0 10px #f8c0ff;
+}
+
+p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    max-width: 600px;
+}
+
+/* El botón con corazón */
+.heart-btn {
+    display: inline-block;
+    background-color: #ff4081;
+    /* Rosa vibrante */
+    color: #ffffff;
+    padding: 12px 25px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1em;
+    margin-top: 20px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(255, 64, 129, 0.4);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+/* El corazón antes del texto */
+.heart-btn::before {
+    content: '💖';
+    margin-right: 8px;
+    animation: beat 1.5s infinite ease-in-out;
+}
+
+/* Animación de latido para el corazón */
+@keyframes beat {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.3);
+    }
+}
+
+.heart-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(255, 64, 129, 0.6);
+}
+
+/* Contenedor para la foto y la flor */
+.photo-container {
+    position: relative;
+    padding: 20px;
+}
+
+#user-photo {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    /* Foto circular */
+    object-fit: cover;
+    border: 5px solid #ff4081;
+    box-shadow: 0 0 25px #ff4081;
+    animation: fadeIn 2s ease-in-out;
+}
+
+/* --- Animación de la Flor --- */
+/* Inspirado en un estilo de 8-bits */
+.flower {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 100px;
+    animation: grow 3s ease-out forwards;
+    transform-origin: bottom center;
+    opacity: 0;
+    animation-delay: 1s;
+    /* Crece después de que la foto aparece */
+}
+
+@keyframes grow {
+    0% {
+        transform: translateX(-50%) scale(0);
+        opacity: 0;
+    }
+
+    50% {
+        transform: translateX(-50%) scale(1.2);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateX(-50%) scale(1);
+        opacity: 1;
+    }
+}
+
+.petal {
+    width: 30px;
+    height: 50px;
+    background: #ffeb3b;
+    /* Amarillo */
+    border-radius: 50%;
+    position: absolute;
+    left: 35px;
+    top: 25px;
+    box-shadow: 0 0 10px #ffeb3b;
+}
+
+.petal.p1 {
+    transform: rotate(0deg) translateY(-30px);
+}
+
+.petal.p2 {
+    transform: rotate(45deg) translateY(-30px);
+}
+
+.petal.p3 {
+    transform: rotate(90deg) translateY(-30px);
+}
+
+.petal.p4 {
+    transform: rotate(135deg) translateY(-30px);
+}
+
+.petal.p5 {
+    transform: rotate(180deg) translateY(-30px);
+}
+
+.petal.p6 {
+    transform: rotate(225deg) translateY(-30px);
+}
+
+.petal.p7 {
+    transform: rotate(270deg) translateY(-30px);
+}
+
+.petal.p8 {
+    transform: rotate(315deg) translateY(-30px);
+}
+
+.center-flower {
+    width: 30px;
+    height: 30px;
+    background: #c28e0e;
+    border-radius: 50%;
+    position: absolute;
+    left: 35px;
+    top: 35px;
+    z-index: 2;
+}
